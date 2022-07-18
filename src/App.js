@@ -5,6 +5,9 @@ import Footer from './Components/Footer/Footer';
 import Home from './Components/Pages/Home';
 import {Routes,Route} from "react-router-dom"
 import MovieDetails from './Components/Pages/MovieDetails';
+import BookingForm from './Components/Pages/BookingForm';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -13,10 +16,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/details/:id" element={<MovieDetails/>} />
+        <Route path="/booking/:id" element={<BookingForm/>} />
       </Routes>
      
      
      <Footer/>
+     <ToastContainer/>
     </div>
   );
 }

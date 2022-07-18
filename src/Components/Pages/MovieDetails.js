@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import { useQuery } from "react-query";
 
 const MovieDetails = () => {
@@ -15,8 +15,8 @@ const MovieDetails = () => {
     }
     // refetch()
     return (
-        <div className='min-h-[80vh] w-full md:w-5/6 lg:w-5/6 mx-auto my-5 '>
-            <div className='flex flex-col md:flex-row lg:flex-row gap-10'>
+        <div className='min-h-[80vh] w-full md:w-5/6 lg:w-5/6 mx-auto my-5 shadow-lg'>
+            <div className='flex flex-col md:flex-row lg:flex-row gap-10 md:p-4 py-4'>
                 <div className='flex  justify-center items-center'>
                     <img src={movie.show.image.original} className="rounded-lg h-screen" alt="" />
                 </div>
@@ -34,8 +34,14 @@ const MovieDetails = () => {
                     <h4 className='text-xl capitalize'>average Runtime: {movie?.show.averageRuntime} </h4>
                     <h4 className='text-xl capitalize'>ended data: {movie?.show.ended} </h4>
                     <h4 className='text-xl capitalize'>premiered data: {movie?.show.premiered} </h4>
-                    <h4 className='text-xl capitalize'> <a className='text-blue-500' href={movie?.show.officialSite}>official Site </a></h4>
-                 <p>
+                    {
+                        movie?.show.officialSite && <a className='text-blue-500 text-xl' href={movie?.show.officialSite}>official Site </a>
+                    
+                    }
+                    <br />
+                    <Link to={`/booking/${movie.show.name}`} className='btn btn-info mt-5'>Click to booking </Link>
+                    
+                 <p className='mt-10'>
                  {movie?.show.summary}
                  </p>
                    
