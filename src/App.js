@@ -11,7 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
   return (
-    <div className="">
+    <div className="min-h-[80vh]">
       <Header/>
       <Routes>
         <Route path="/" element={<Home/>} />

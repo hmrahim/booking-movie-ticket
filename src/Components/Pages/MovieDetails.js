@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams,Link } from 'react-router-dom';
 import { useQuery } from "react-query";
+import Spiner from './Spiner';
 
 const MovieDetails = () => {
     const {id} = useParams()
@@ -11,7 +12,7 @@ const MovieDetails = () => {
    console.log(movie);
 
     if(isLoading){
-        return <h1>Loading...</h1>
+        return <Spiner/>
     }
     // refetch()
     return (

@@ -16,22 +16,7 @@ const BookingForm = () => {
   const onsubmit = (data) => {
     const obj = Object.assign(data, { id: Date.now(), count: 1 });
 
-    // let arr = []
-    // const get = JSON.parse(localStorage.getItem("ticket"))
-    // arr = [get]
-    // arr.push(data)
-
-    // localStorage.setItem("ticket",JSON.stringify(arr))
-    // console.log(arr)
-    // const qty = localStorage.getItem(data.email)
-    // if(qty){
-    //     const newqty = parseInt(qty) + 1
-    //     localStorage.setItem(data.email,newqty)
-    // }else{
-
-    //     localStorage.setItem(data.email,1)
-    // }
-
+ 
     const exist = localStorage.getItem(obj.email);
     if (exist) {
       const newObj = JSON.parse(exist).count + 1;
